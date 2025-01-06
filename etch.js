@@ -1,7 +1,7 @@
-createBtn = document.getElementById("createBtn");
-container = document.getElementById("container");
+const createBtn = document.getElementById("createBtn");
+const container = document.getElementById("container");
 
-createBtn.addEventListener("click", () => askUser());
+createBtn.addEventListener("click", askUser);
 
 function askUser() {
     clearContainer();
@@ -13,21 +13,14 @@ function askUser() {
     createGrid(size);
 }
 
-/*function createGrid(sideLength) {
-    for (i = 0; i < sideLength * sideLength; i++) {
-        const div = document.createElement("div");
-        div.classList.add("block");
-        container.appendChild(div);
-    }
-}*/
-
 function createGrid(sideLength) {
-    for (i = 0; i < sideLength; i++) {
+    for (let i = 0; i < sideLength; i++) {
         const divContainer = document.createElement("div");
         divContainer.classList.add("row")
-        for (j = 0; j < sideLength; j++) {
+        for (let j = 0; j < sideLength; j++) {
             const div = document.createElement("div");
             div.classList.add("block");
+            div.addEventListener("mouseover", changeDivColor);
             divContainer.appendChild(div);
         }
         container.appendChild(divContainer)
@@ -36,4 +29,8 @@ function createGrid(sideLength) {
 
 function clearContainer() {
     container.innerHTML = "";
+}
+
+function changeDivColor(event) {
+    event.target.classList.add("divNewColor");
 }

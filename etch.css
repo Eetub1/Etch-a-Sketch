@@ -11,7 +11,6 @@ body {
     align-items: center;
 }
 
-
 #createBtn {
     width: 5vw;
     text-align: center;
@@ -40,4 +39,8 @@ body {
     display: flex;
     justify-content: flex-start;
     width: 100%;
+}
+
+.divNewColor{
+    background-color: black;
 }
